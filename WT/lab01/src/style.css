@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+}
+
+.header{
+    height: 200px;
+    margin: 0 ;
+    background-color: hsl(263, 43%, 37%);
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    
+}
+
+.main{
+    height: 1200px;
+    background-color: hsl(265, 58%, 86%);
+}
+
+.smth{
+    width: 50%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    margin: 100px 25% 0 25%;
+    background-color: white;
+    border: 3px solid rgb(230, 230, 230);
+}
+
+.content_form{
+    width: 80%;
+    
+
+    background-color: white;
+}

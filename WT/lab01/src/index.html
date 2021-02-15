@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Password request form</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="smth">
+                <form class="content_form">
+                    
+                    <h1>Password request form</h1>
+                    <p>The name and photo associated with your Google account wiil be
+                        recorded when you upload files and submit this form. Not <b>spas.work@gmail.com?</b>
+                    </p>
+                    <p>*Required</p>
+
+                    <h2>Please fill your name *</h2>
+                    <input type="text" name="name">
+
+                    <br></br>
+
+                    <h2>What color you like *</h2>
+                    <p><input type="radio" name="color" value="red"/>Red</p>
+                    <p><input type="radio" name="color" value="green"/>Green</p>
+                    <p><input type="radio" name="color" value="blue"/>Blue</p>
+                    <p><input type="radio" name="color" value="black"/>Black</p>
+                    <p><input type="radio" name="color" value="white"/>While</p>
+                    <p><input type="radio" name="color" value="other"/>Other: <input type="text" name="other_color"></p>
+
+                    <h2>What town you like more? *</h2>
+                    <p>
+                        <select name="town">
+                            <option value="default">Choose</option>
+                            <option value="Brest">Brest</option>
+                            <option value="Minsk">Minsk</option>
+                        </select>
+                    </p>
+
+                    <h2>Please describe (at least 50 symbols on symbols) your favorite programming language *</h2>
+                    <p><input type="text" name="prog_lan"></p>
+
+                    <h2>What years of education did you really like? *</h2>
+                    <p><input type="checkbox" name="education" value="First">First</p>
+                    <p><input type="checkbox" name="education" value="Second">Second</p>
+                    <p><input type="checkbox" name="education" value="Third">Third</p>
+                    <p><input type="checkbox" name="education" value="Fourth">Fourth</p>
+
+                    <h2>Please send any image *</h2>
+                    <p><a href="#">ADD FILE</a></p>
+                    <p><input type="file" name="file"/></p>
+
+                    <h2>Set last Monday Monday *</h2>
+                    <p><input type="datetime" name="monday"></p>
+
+                    <p><input type="button" value="SUBMIT" name="Submit"></p>
+                </form>
+            </div>
+        </div>
+        <div class="main">
+
+        </div>
+    </body>
+</html>
