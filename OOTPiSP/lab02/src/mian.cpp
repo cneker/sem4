@@ -1,34 +1,43 @@
+//version two
+
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 using namespace std;
-
-
 
 int main()
 {
 	ifstream fi;
 	ofstream fo;
+	// ѕри желании можно добавить ещЄ больше идентификаторов
+	string iD[7] = { "and", "if", "for", "bool", "else", "int", "class" };
+	string buff;
+	// false - оставл€ем, true - пропускаем
 	bool gg = false;
-	char iD[7][40] = { "and", "if", "for", "bool", "else", "int", "class" };
+	// ’ранение переменных
+	vector<string> lst;
+
 	fi.open("file.txt");
-	fo.open("filik.txt");
+
 	if (fi.is_open()) {
 		
-		char buff[40];
-		
 		while (fi >> buff) {
+
 			gg = false;
+			// явл€етс€ ли первый символ цифрой
 			if (!isdigit(buff[0])) {
+				// явл€етс€ ли слово идентификатором
 				for (int i = 0; i < 7; i++) {
-					if (strcmp(buff, iD[i]) == 0) {
+					if (buff == iD[i]) {
 						gg = true;
 						break;
 					}
 				}
-
+				// —остоит ли слово только из латинских букв верхнего (нижнего) регистра,
+				// символа подчЄркивани€ и цифр
 				if (!gg) {
-					for (int i = 0; i < strlen(buff); i++) {
+					for (int i = 0; i < buff.size(); i++) {
 						if ((buff[i] >= 65 && buff[i] <= 90) ||
 							(buff[i] >= 97 && buff[i] <= 122) ||
 							buff[i] == '_') {
@@ -49,13 +58,19 @@ int main()
 			}
 
 			if (!gg) {
-				fo << buff << " ";
+				lst.push_back(buff);
 			}
 		}
 	}
 	fi.close();
-	fo.close();
 
+	fo.open("file.txt");
+	
+	for (int i = 0; i < lst.size(); i++) {
+		fo << lst[i] << " ";
+	}
+
+	fo.close();
 
 	return 0;
 }
