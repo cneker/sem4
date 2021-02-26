@@ -1,5 +1,3 @@
-//version two
-
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -10,32 +8,31 @@ int main()
 {
 	ifstream fi;
 	ofstream fo;
-	// ѕри желании можно добавить ещЄ больше идентификаторов
+	// You can add more key words if you want
 	string iD[7] = { "and", "if", "for", "bool", "else", "int", "class" };
 	string buff;
-	// false - оставл€ем, true - пропускаем
+	// false - identifier, true - not identifier
 	bool gg = false;
-	// ’ранение переменных
+	// Storing identifiers
 	vector<string> lst;
 
 	fi.open("file.txt");
 
 	if (fi.is_open()) {
-		
+
 		while (fi >> buff) {
 
 			gg = false;
-			// явл€етс€ ли первый символ цифрой
+			// Is the first character of a word a digit
 			if (!isdigit(buff[0])) {
-				// явл€етс€ ли слово идентификатором
+				// Is this word an identifier
 				for (int i = 0; i < 7; i++) {
 					if (buff == iD[i]) {
 						gg = true;
 						break;
 					}
 				}
-				// —остоит ли слово только из латинских букв верхнего (нижнего) регистра,
-				// символа подчЄркивани€ и цифр
+				// Does this word consist of characters of the Latin alphabet, '_' and numbers
 				if (!gg) {
 					for (int i = 0; i < buff.size(); i++) {
 						if ((buff[i] >= 65 && buff[i] <= 90) ||
@@ -65,7 +62,7 @@ int main()
 	fi.close();
 
 	fo.open("file.txt");
-	
+
 	for (int i = 0; i < lst.size(); i++) {
 		fo << lst[i] << " ";
 	}
